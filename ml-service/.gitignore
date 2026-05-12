@@ -1,0 +1,20 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Model artifacts (bisa besar, regenerate dari training)
+model/*.joblib
+
+# Database files (jika masih ada sisa SQLite)
+*.db
+
+# IDE
+.vscode/
+.idea/
+
+docs/
+venv/

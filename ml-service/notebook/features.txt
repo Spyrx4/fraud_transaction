@@ -1,0 +1,10 @@
+age
+transaction_amount
+account_balance
+num_transactions_today
+is_foreign_transaction
+transaction_hour
+prev_fraud_flag
+merchant_distance_km
+merchant_risk_score
+is_fraud

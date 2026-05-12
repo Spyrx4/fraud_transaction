@@ -1,0 +1,87 @@
+xtrain:
+  n_rows: 20672
+  n_cols: 9
+  columns:
+  - age
+  - transaction_amount
+  - account_balance
+  - num_transactions_today
+  - is_foreign_transaction
+  - transaction_hour
+  - prev_fraud_flag
+  - merchant_distance_km
+  - merchant_risk_score
+  dtypes:
+    age: float64
+    transaction_amount: float64
+    account_balance: float64
+    num_transactions_today: float64
+    is_foreign_transaction: float64
+    transaction_hour: float64
+    prev_fraud_flag: float64
+    merchant_distance_km: float64
+    merchant_risk_score: float64
+  target:
+    n_rows: 20672
+    dtype: int64
+    unique_values:
+    - 0
+    - 1
+xval:
+  n_rows: 6460
+  n_cols: 9
+  columns:
+  - age
+  - transaction_amount
+  - account_balance
+  - num_transactions_today
+  - is_foreign_transaction
+  - transaction_hour
+  - prev_fraud_flag
+  - merchant_distance_km
+  - merchant_risk_score
+  dtypes:
+    age: float64
+    transaction_amount: float64
+    account_balance: float64
+    num_transactions_today: float64
+    is_foreign_transaction: float64
+    transaction_hour: float64
+    prev_fraud_flag: float64
+    merchant_distance_km: float64
+    merchant_risk_score: float64
+  target:
+    n_rows: 6460
+    dtype: int64
+    unique_values:
+    - 0
+    - 1
+xtest:
+  n_rows: 5168
+  n_cols: 9
+  columns:
+  - age
+  - transaction_amount
+  - account_balance
+  - num_transactions_today
+  - is_foreign_transaction
+  - transaction_hour
+  - prev_fraud_flag
+  - merchant_distance_km
+  - merchant_risk_score
+  dtypes:
+    age: float64
+    transaction_amount: float64
+    account_balance: float64
+    num_transactions_today: float64
+    is_foreign_transaction: float64
+    transaction_hour: float64
+    prev_fraud_flag: float64
+    merchant_distance_km: float64
+    merchant_risk_score: float64
+  target:
+    n_rows: 5168
+    dtype: int64
+    unique_values:
+    - 0
+    - 1
