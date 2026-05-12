@@ -1,6 +1,6 @@
 # Transaction Fraud Monitoring System
 
-Sistem monitoring penipuan transaksi ujung-ke-ujung (end-to-end) yang terdiri dari Machine Learning Backend untuk memprediksi probabilitas fraud secara real-time dan dashboard untuk memantau transaksi.
+Sistem monitoring penipuan transaksi end-to-end yang terdiri dari Machine Learning Backend untuk memprediksi probabilitas fraud secara real-time dan dashboard untuk memantau transaksi.
 
 ---
 
