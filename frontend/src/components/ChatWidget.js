@@ -44,12 +44,12 @@ export default function ChatWidget() {
       {open && (
         <div className="chat-panel">
           <div className="chat-header">
-            <span className="chat-header-title" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <Bot size={18} /> Fraud Detection Assistant
+            <span className="chat-header-title" style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 600 }}>
+              <Bot size={18} style={{ color: 'var(--primary)' }} /> Fraud Detection Assistant
             </span>
             <button
               onClick={() => setOpen(false)}
-              style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+              style={{ background: 'none', border: 'none', color: 'var(--ink)', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
             >
               <X size={18} />
             </button>

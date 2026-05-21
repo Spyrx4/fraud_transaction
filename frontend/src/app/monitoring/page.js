@@ -109,15 +109,16 @@ export default function MonitoringPage() {
                     <td>{Number(tx.account_balance).toLocaleString('id-ID')}</td>
                     <td>
                       <strong style={{
-                        color: tx.fraud_probability >= 0.8 ? 'var(--danger)' :
-                               tx.fraud_probability >= 0.5 ? 'var(--warning)' : 'var(--success)'
+                        color: tx.fraud_probability >= 0.8 ? 'var(--semantic-error)' :
+                               tx.fraud_probability >= 0.5 ? 'var(--timeline-done)' : 'var(--semantic-success)',
+                        fontWeight: 600
                       }}>
                         {(tx.fraud_probability * 100).toFixed(1)}%
                       </strong>
                     </td>
                     <td><span className={`badge badge-${tx.risk_level?.toLowerCase()}`}>{riskLabel(tx.risk_level)}</span></td>
                     <td><span className={`badge badge-${tx.status}`}>{statusLabel(tx.status)}</span></td>
-                    <td style={{ color: 'var(--text-secondary)', fontSize: 13 }}>
+                    <td style={{ color: 'var(--body)', fontSize: 13 }}>
                       {new Date(tx.created_at).toLocaleString('id-ID')}
                     </td>
                     <td>

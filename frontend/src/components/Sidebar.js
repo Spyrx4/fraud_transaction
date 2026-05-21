@@ -34,14 +34,17 @@ export default function Sidebar({ collapsed, onToggle, theme, onThemeToggle, rol
       </div>
 
       {/* Role Indicator */}
-      <div className="role-indicator" style={{ padding: '0 8px', marginBottom: 16 }}>
+      <div className="role-indicator" style={{ padding: '0 8px', marginBottom: 24 }}>
         <div style={{
-          background: 'var(--accent-glow)',
-          borderRadius: 'var(--radius-sm)',
-          padding: '8px 12px',
-          fontSize: 12,
+          background: 'var(--canvas-soft)',
+          border: '1px solid var(--hairline)',
+          borderRadius: 'var(--radius-md)',
+          padding: '10px 12px',
+          fontSize: 11,
           fontWeight: 600,
-          color: 'var(--accent)',
+          textTransform: 'uppercase',
+          letterSpacing: '0.05em',
+          color: 'var(--ink)',
           textAlign: collapsed ? 'center' : 'left',
           whiteSpace: 'nowrap',
           overflow: 'hidden',
@@ -50,7 +53,7 @@ export default function Sidebar({ collapsed, onToggle, theme, onThemeToggle, rol
           justifyContent: collapsed ? 'center' : 'flex-start',
           gap: 8
         }}>
-          <RoleIcon size={16} />
+          <RoleIcon size={14} style={{ color: 'var(--primary)' }} />
           {!collapsed && <span>{roleLabel}</span>}
         </div>
       </div>

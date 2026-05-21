@@ -49,18 +49,18 @@ export default function DashboardPage() {
       {
         label: 'Total Transaksi',
         data: stats.hourly_distribution?.map(h => h.count) || [],
-        backgroundColor: 'rgba(99,102,241,0.5)',
-        borderColor: 'var(--accent)',
+        backgroundColor: 'rgba(245,78,0,0.4)',
+        borderColor: '#f54e00',
         borderWidth: 1,
-        borderRadius: 4,
+        borderRadius: 2,
       },
       {
         label: 'High Risk',
         data: stats.hourly_distribution?.map(h => h.fraud_count) || [],
-        backgroundColor: 'rgba(239,68,68,0.5)',
-        borderColor: 'var(--danger)',
+        backgroundColor: '#dfa88f', // Thinking (Peach)
+        borderColor: '#dfa88f',
         borderWidth: 1,
-        borderRadius: 4,
+        borderRadius: 2,
       },
     ],
   };
@@ -68,11 +68,11 @@ export default function DashboardPage() {
   const chartOptions = {
     responsive: true,
     plugins: {
-      legend: { labels: { color: 'var(--text-secondary)', font: { family: 'Inter' } } }
+      legend: { labels: { color: '#807d72', font: { family: 'Inter', size: 12 } } }
     },
     scales: {
-      x: { ticks: { color: 'var(--text-muted)' }, grid: { color: 'var(--border)' } },
-      y: { ticks: { color: 'var(--text-muted)' }, grid: { color: 'var(--border)' } },
+      x: { ticks: { color: '#a09c92', font: { size: 11 } }, grid: { display: false } },
+      y: { ticks: { color: '#a09c92', font: { size: 11 } }, grid: { color: '#e6e5e0' } },
     },
   };
 
@@ -81,7 +81,7 @@ export default function DashboardPage() {
     labels: ['Tinggi', 'Sedang', 'Rendah'],
     datasets: [{
       data: [stats.total_high_risk, stats.total_medium_risk, stats.total_low_risk],
-      backgroundColor: ['rgba(239,68,68,0.7)', 'rgba(245,158,11,0.7)', 'rgba(34,197,94,0.7)'],
+      backgroundColor: ['#dfa88f', '#c08532', '#9fc9a2'], // Thinking, Done (Gold), Grep (Mint)
       borderWidth: 0,
     }],
   };

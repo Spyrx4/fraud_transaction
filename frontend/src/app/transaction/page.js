@@ -67,25 +67,25 @@ export default function TransactionPage() {
         <div className="page-header">
           <h1 className="page-title">Pengajuan Berhasil</h1>
         </div>
-        <div className="card" style={{ textAlign: 'center', padding: 48, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <div style={{ color: 'var(--success)', marginBottom: 16 }}>
+        <div className="card" style={{ textAlign: 'center', padding: 64, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ color: 'var(--semantic-success)', marginBottom: 24 }}>
             <CheckCircle2 size={64} />
           </div>
-          <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, color: 'var(--text-primary)' }}>
+          <h2 style={{ fontSize: 26, fontWeight: 400, marginBottom: 12, color: 'var(--ink)', letterSpacing: '-0.02em' }}>
             Transaksi Berhasil Diajukan
           </h2>
-          <p style={{ color: 'var(--text-secondary)', fontSize: 15, marginBottom: 8 }}>
-            Nomor Transaksi: <strong style={{ color: 'var(--accent)' }}>#{txId}</strong>
+          <p style={{ color: 'var(--body)', fontSize: 16, marginBottom: 8 }}>
+            Nomor Transaksi: <strong style={{ color: 'var(--primary)' }}>#{txId}</strong>
           </p>
-          <p style={{ color: 'var(--text-secondary)', fontSize: 14, maxWidth: 400, margin: '0 auto 28px' }}>
+          <p style={{ color: 'var(--body)', fontSize: 14, maxWidth: 420, margin: '0 auto 40px', lineHeight: 1.6 }}>
             Transaksi Anda sedang dalam proses review oleh pihak bank.
             Anda dapat memantau statusnya di halaman <strong>Status Transaksi</strong>.
           </p>
-          <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
             <button className="btn btn-primary" onClick={handleNewTransaction} style={{ gap: 8 }}>
               <PlusCircle size={18} /> Ajukan Transaksi Baru
             </button>
-            <a href="/status" className="btn btn-ghost" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+            <a href="/status" className="btn btn-secondary" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
               <List size={18} /> Lihat Status
             </a>
           </div>
@@ -103,7 +103,7 @@ export default function TransactionPage() {
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div className="card" style={{ marginBottom: 24 }}>
+        <div className="card" style={{ marginBottom: 32 }}>
           <div className="form-grid">
             <div className="form-group">
               <label className="form-label">Usia</label>
@@ -149,29 +149,29 @@ export default function TransactionPage() {
             </div>
             <div className="form-group">
               <label className="form-label">Transaksi Luar Negeri</label>
-              <div className="toggle-group">
+              <div className="toggle-group" style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 0' }}>
                 <button type="button" className={`toggle ${form.is_foreign_transaction ? 'active' : ''}`}
                   onClick={() => handleChange('is_foreign_transaction', form.is_foreign_transaction ? 0 : 1)} />
-                <span style={{ fontSize: 14, color: 'var(--text-secondary)' }}>
+                <span style={{ fontSize: 14, color: 'var(--body)' }}>
                   {form.is_foreign_transaction ? 'Ya' : 'Tidak'}
                 </span>
               </div>
             </div>
             <div className="form-group">
               <label className="form-label">Riwayat Fraud Sebelumnya</label>
-              <div className="toggle-group">
+              <div className="toggle-group" style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '8px 0' }}>
                 <button type="button" className={`toggle ${form.prev_fraud_flag ? 'active' : ''}`}
                   onClick={() => handleChange('prev_fraud_flag', form.prev_fraud_flag ? 0 : 1)} />
-                <span style={{ fontSize: 14, color: 'var(--text-secondary)' }}>
+                <span style={{ fontSize: 14, color: 'var(--body)' }}>
                   {form.prev_fraud_flag ? 'Ya' : 'Tidak'}
                 </span>
               </div>
             </div>
           </div>
 
-          <div style={{ marginTop: 24, textAlign: 'center' }}>
+          <div style={{ marginTop: 40, textAlign: 'center' }}>
             <button className="btn btn-primary" type="submit" disabled={loading}
-              style={{ padding: '14px 48px', fontSize: 16, gap: 8 }}>
+              style={{ padding: '12px 64px', height: 48, fontSize: 16, gap: 12 }}>
               {loading ? <><Loader2 size={20} className="spin" /> Mengirim...</> : <><Send size={20} /> Ajukan Transaksi</>}
             </button>
           </div>
@@ -179,9 +179,9 @@ export default function TransactionPage() {
       </form>
 
       {error && (
-        <div className="card" style={{ borderColor: 'var(--danger)', display: 'flex', alignItems: 'center', gap: 12 }}>
-          <XCircle size={20} style={{ color: 'var(--danger)' }} />
-          <p style={{ color: 'var(--danger)', margin: 0 }}>{error}</p>
+        <div className="card" style={{ borderColor: 'var(--semantic-error)', display: 'flex', alignItems: 'center', gap: 12, background: 'var(--canvas-soft)' }}>
+          <XCircle size={20} style={{ color: 'var(--semantic-error)' }} />
+          <p style={{ color: 'var(--semantic-error)', margin: 0, fontWeight: 500 }}>{error}</p>
         </div>
       )}
     </div>
